@@ -14,7 +14,7 @@ TDGAAccount *tdgaAccount = nil;
 @implementation TalkingDataGAPlugin
 
 - (void)onStart:(CDVInvokedUrlCommand*)command {
-    [TalkingDataGA setSdkType:4];
+    [TalkingDataGA setSDKFramework:4];
     NSString *appId = [command.arguments objectAtIndex:0];
     if (appId == nil || [appId isKindOfClass:[NSNull class]]) {
         return;

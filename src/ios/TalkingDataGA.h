@@ -87,9 +87,9 @@ typedef enum {
 + (void)setVerboseLogDisabled;
 
 /**
- *  @method setSdkType 设置SDK类型  区分开发框架使用，开发者请勿调用
+ *  @method setSDKFramework 设置SDK类型  区分开发框架使用，开发者请勿调用
  */
-+ (void)setSdkType:(int)type;
++ (void)setSDKFramework:(int)tag;
 
 @end
 
