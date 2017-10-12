@@ -1,5 +1,5 @@
 {
-  "name": "gameanalytics_sdk_cordova",
+  "name": "cordova-plugin-TalkingDataGA",
   "version": "4.0.11",
   "description": "TalkingData GameAnalytics SDK",
   "main": "index.js",
