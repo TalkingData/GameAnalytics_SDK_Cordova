@@ -8,6 +8,7 @@ TDGAAccountType.ACCOUNT_SINA_WEIBO = 2;
 TDGAAccountType.ACCOUNT_QQ = 3;
 TDGAAccountType.TENCENT_WEIBO = 4;
 TDGAAccountType.ND91 = 5;
+TDGAAccountType.WEIXIN = 6;
 
 // other type
 TDGAAccountType.ACCOUNTTYPE1 = 11;

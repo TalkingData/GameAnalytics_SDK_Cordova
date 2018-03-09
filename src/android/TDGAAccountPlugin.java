@@ -59,6 +59,8 @@ public class TDGAAccountPlugin extends CordovaPlugin {
 			return TDGAAccount.AccountType.QQ_WEIBO;
 		case 5:
 			return TDGAAccount.AccountType.ND91;
+		case 6:
+			return TDGAAccount.AccountType.WEIXIN;
 		case 11:
 			return TDGAAccount.AccountType.TYPE1;
 		case 12:
