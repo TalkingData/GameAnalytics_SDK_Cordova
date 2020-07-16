@@ -60,6 +60,10 @@ public class TalkingDataGAPlugin extends CordovaPlugin {
         	String deviceId = TalkingDataGA.getDeviceId(ctx);
         	callbackContext.success(deviceId);
         	return true;
+        } else if (action.equals("getOAID")) {
+            String oaid = TalkingDataGA.getOAID(ctx);
+            callbackContext.success(oaid);
+            return true;
         } else if (action.equals("setVerboseLogDisabled")) {
         	TalkingDataGA.setVerboseLogDisabled();
         	return true;

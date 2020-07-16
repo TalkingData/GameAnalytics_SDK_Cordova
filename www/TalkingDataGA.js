@@ -14,6 +14,9 @@ var TalkingDataGA = {
     getDeviceId:function(callBack) {
         exec(callBack, null, "TalkingDataGA", "getDeviceId", []);
     },
+    getOAID:function(callBack){
+        exec(callBack, null, "TalkingDataGA", "getOAID", []);
+    },
     setVerboseLogDisabled:function() {
         exec(null, null, "TalkingDataGA", "setVerboseLogDisabled", []);
     }
