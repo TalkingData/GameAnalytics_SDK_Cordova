@@ -1,87 +1,47 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<plugin xmlns="http://http://www.talkinggame.com" id="cordova-plugin-TalkingDataGA" version="4.0.11">
-
-    <name>TalkingDataGA</name>
-    <description>Cordova File Plugin</description>
-    <keywords>cordova,talkingdata,gameanalytics</keywords>
-    <repo>https://github.com/TalkingData/GameAnalytics_SDK_Cordova.git</repo>
-
+<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0" 
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        id="talkingdata-gameanalytics" 
+        version="4.0.12">
+    
+    <name>TalkingData-GameAnalytics</name>
+    
     <js-module src="www/TalkingDataGA.js" name="TalkingDataGA">
         <clobbers target="TalkingDataGA" />
     </js-module>
-
-    <js-module src="www/TDGAAccount.js" name="TDGAAccount">
-        <clobbers target="TDGAAccount" />
+    <js-module src="www/TDGAProfile.js" name="TDGAProfile">
+        <clobbers target="TDGAProfile" />
     </js-module>
-
-    <js-module src="www/TDGAAccountType.js" name="TDGAAccountType">
-        <clobbers target="TDGAAccountType" />
+    <js-module src="www/TDGAProfileType.js" name="TDGAProfileType">
+        <clobbers target="TDGAProfileType" />
     </js-module>
-
     <js-module src="www/TDGAGender.js" name="TDGAGender">
         <clobbers target="TDGAGender" />
     </js-module>
-
     <js-module src="www/TDGAItem.js" name="TDGAItem">
         <clobbers target="TDGAItem" />
     </js-module>
-
     <js-module src="www/TDGAMission.js" name="TDGAMission">
         <clobbers target="TDGAMission" />
     </js-module>
-
     <js-module src="www/TDGAVirtualCurrency.js" name="TDGAVirtualCurrency">
         <clobbers target="TDGAVirtualCurrency" />
     </js-module>
-    <!-- ios -->
-    <platform name="ios">
-
-        <header-file src="src/ios/TalkingDataGAPlugin.h" />
-        <source-file src="src/ios/TalkingDataGAPlugin.m" />
-        <header-file src="src/ios/TalkingDataGA.h" />
-        <source-file src="src/ios/libTalkingDataGA.a" framework="true" />
-
-        <config-file target="config.xml" parent="/widget/plugins">
-            <feature name="TalkingDataGA">
-                <param name="ios-package" value="TalkingDataGAPlugin"/>
-            </feature>
-            <feature name="TDGAAccount">
-                <param name="ios-package" value="TDGAAccountPlugin"/>
-            </feature>
-            <feature name="TDGAMission">
-                <param name="ios-package" value="TDGAMissionPlugin"/>
-            </feature>
-            <feature name="TDGAVirtualCurrency">
-                <param name="ios-package" value="TDGAVirtualCurrencyPlugin"/>
-            </feature>
-            <feature name="TDGAItem">
-                <param name="ios-package" value="TDGAItemPlugin"/>
-            </feature>
-        </config-file>
-
-        <framework src="Security.framework" />
-        <framework src="CoreTelephony.framework" />
-        <framework src="AdSupport.framework" weak="true" />
-        <framework src="libz.dylib" />
-
-    </platform>
-
-    <!-- android -->
+    
     <platform name="android">
-
-        <source-file src="src/android/TalkingDataGA.jar" target-dir="libs" />
         <source-file src="src/android/TalkingDataGAPlugin.java" target-dir="src/com/talkingdata/game" />
-        <source-file src="src/android/TDGAAccountPlugin.java" target-dir="src/com/talkingdata/game" />
+        <source-file src="src/android/TDGAProfilePlugin.java" target-dir="src/com/talkingdata/game" />
         <source-file src="src/android/TDGAMissionPlugin.java" target-dir="src/com/talkingdata/game" />
         <source-file src="src/android/TDGAVirtualCurrencyPlugin.java" target-dir="src/com/talkingdata/game" />
         <source-file src="src/android/TDGAItemPlugin.java" target-dir="src/com/talkingdata/game" />
-
+        <source-file src="src/android/TalkingDataGA.jar" target-dir="libs" />
+        
         <config-file target="res/xml/config.xml" parent="/widget/plugins">
             <feature name="TalkingDataGA">
                 <param name="android-package" value="com.talkingdata.game.TalkingDataGAPlugin"/>
             </feature>
-            <feature name="TDGAAccount">
-                <param name="android-package" value="com.talkingdata.game.TDGAAccountPlugin"/>
+            <feature name="TDGAProfile">
+                <param name="android-package" value="com.talkingdata.game.TDGAProfilePlugin"/>
             </feature>
             <feature name="TDGAMission">
                 <param name="android-package" value="com.talkingdata.game.TDGAMissionPlugin"/>
@@ -93,15 +53,48 @@
                 <param name="android-package" value="com.talkingdata.game.TDGAItemPlugin"/>
             </feature>
         </config-file>
-
+        
         <config-file target="AndroidManifest.xml" parent="/manifest">
             <uses-permission android:name="android.permission.INTERNET"/>
-            <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
-            <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
             <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
             <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+            <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
+            <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+            <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+            <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
         </config-file>
-
     </platform>
-
+    
+    <platform name="ios">
+        <header-file src="src/ios/TalkingDataGAPlugin.h" />
+        <source-file src="src/ios/TalkingDataGAPlugin.m" />
+        <header-file src="src/ios/TalkingDataGA.h" />
+        <source-file src="src/ios/libTalkingDataGA.a" framework="true" />
+        
+        <config-file target="config.xml" parent="/widget/plugins">
+            <feature name="TalkingDataGA">
+                <param name="ios-package" value="TalkingDataGAPlugin"/>
+            </feature>
+            <feature name="TDGAProfile">
+                <param name="ios-package" value="TDGAProfilePlugin"/>
+            </feature>
+            <feature name="TDGAMission">
+                <param name="ios-package" value="TDGAMissionPlugin"/>
+            </feature>
+            <feature name="TDGAVirtualCurrency">
+                <param name="ios-package" value="TDGAVirtualCurrencyPlugin"/>
+            </feature>
+            <feature name="TDGAItem">
+                <param name="ios-package" value="TDGAItemPlugin"/>
+            </feature>
+        </config-file>
+        
+        <framework src="AdSupport.framework" />
+        <framework src="CoreMotion.framework" />
+        <framework src="CoreTelephony.framework" />
+        <framework src="Security.framework" />
+        <framework src="SystemConfiguration.framework" />
+        <framework src="libc++.tbd" />
+        <framework src="libz.tbd" />
+    </platform>
 </plugin>

@@ -1,8 +1,8 @@
 {
-  "name": "cordova-plugin-TalkingDataGA",
-  "version": "4.0.11",
-  "description": "TalkingData GameAnalytics SDK",
-  "main": "index.js",
+  "name": "talkingdata-gameanalytics",
+  "version": "4.0.12",
+  "description": "TalkingData Game Analytics SDK Cordova Plugin.",
+  "main": "TalkingDataGA.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -11,11 +11,10 @@
     "url": "git+https://github.com/TalkingData/GameAnalytics_SDK_Cordova.git"
   },
   "keywords": [
-    "TalkingDataGA",
-    "cordova",
-    "cordova-plugin-TalkingDataGA"
+    "TalkingData",
+    "Analytics"
   ],
-  "author": "xiaofei",
+  "author": "TalkingData",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/TalkingData/GameAnalytics_SDK_Cordova/issues"

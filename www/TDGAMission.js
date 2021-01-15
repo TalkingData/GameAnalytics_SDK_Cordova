@@ -1,13 +1,31 @@
 var exec = require('cordova/exec');
+
 var TDGAMission = {
-    onBegin:function(missionId) {
+
+    /**
+     * 任务开始
+     * @param {String}  missionId       : 任务ID
+     */
+    onBegin: function(missionId) {
         exec(null, null, "TDGAMission", "onBegin", [missionId]);
     },
-    onCompleted:function(missionId) {
+
+    /**
+     * 任务完成
+     * @param {String}  missionId       : 任务ID
+     */
+    onCompleted: function(missionId) {
         exec(null, null, "TDGAMission", "onCompleted", [missionId]);
     },
-    onFailed:function(missionId, failedCause) {
+
+    /**
+     * 任务失败
+     * @param {String}  missionId       : 任务ID
+     * @param {String}  failedCause     : 失败原因
+     */
+    onFailed: function(missionId, failedCause) {
         exec(null, null, "TDGAMission", "onFailed", [missionId, failedCause]);
-    }
+    },
 };
+
 module.exports = TDGAMission;
